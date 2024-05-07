@@ -8,13 +8,14 @@
 
    <div class="col-6 mt-3">
     <div class="card"   >
-        <img src="<%= Listing.image %> "
+        <img src="<%= Listing.image.url %> "
         class="card-img-top show-img" 
         alt="Listing image"
         >
     </div>
         <div class="card-body">
           <p class="card-text">
+           <p> Owned by <i><%= Listing.owner.username %></i></p>
            <b><li><%= Listing.title %></li></b> 
            <li><%= Listing.description %></li>
             <li>&#8377;<%= Listing.price.toLocaleString("en-In") %></li>
@@ -29,7 +30,7 @@
 
     
     </div>
-
+<% if(currUser && currUser._id.equals(Listing.owner._id)) {%>
     <div class="btns">
     <div class="col-1">
         <a href="/listings/<%= Listing.id %>/edit" class="btn btn-dark add-btn">edit </a>
@@ -44,4 +45,6 @@
     </div>
    
 </div>
+
+<% } %>
 </body>

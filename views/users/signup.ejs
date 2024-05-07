@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row mt-3">
+    <div class="col-6 offset-3">
+        <h1 class="mb-3">Sign Up for Wanderlust</h1>
+        <form action="/signup" method="post" class="needs-validation" id="signup-form" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" required minlength="3" maxlength="20">
+                <div class="invalid-feedback">Please enter a username (3-20 characters).</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required minlength="6">
+                <div class="invalid-feedback">Please enter a password (at least 6 characters).</div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    (() => {
+        'use strict';
+
+        // Fetch the form
+        const form = document.getElementById('signup-form');
+
+        // Prevent submission and apply custom Bootstrap validation styles
+        form.addEventListener('submit', (event) => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        }, false);
+    })();
+</script>

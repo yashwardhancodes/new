@@ -4,9 +4,9 @@
     <br><br>
     <div class="row offset-2" >
         <div class="col-8">
-    <h3>Create a New Listing</h3>
+    <h3>Update Listing</h3>
     <br><br>
-    <form method="post" action="/listings/<%= Listing.id %>?_method=PUT"  novalidate class="needs-validation" >
+    <form method="post" action="/listings/<%= Listing.id %>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -26,8 +26,8 @@
        
 
         <div class="mb-3">
-            <label for="image" class="form-label">Image link</label>
-            <input type="text" 
+            <label for="image" class="form-label">Upload new Image </label>
+            <input type="file" 
             name="listing[image]"
              value="<%= Listing.image %>"
              class="form-control" >
