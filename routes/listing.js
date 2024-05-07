@@ -6,7 +6,7 @@ const upload = multer({ storage });
 
 
 const wrapAsync=require("../utils/wrapAsync.js");
-const listing=require("C:/Users/TheYashvardhan/Desktop/map/ac/majorproject/models/listing.js");
+const listing=require("../models/listing.js");
 const ExpressError=require("../utils/expressError.js");
 const {isLoggedIn}=require("../middleware.js");
 
