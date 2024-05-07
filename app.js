@@ -9,7 +9,7 @@ const path=require("path");
 const engine = require('ejs-mate');
 const methodOverride=require("method-override");
 const ExpressError=require("./utils/expressError.js");
-const router=require("../majorproject/routes/listing.js");
+const router=require("./routes/listing.js");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 
@@ -74,7 +74,7 @@ console.log("error");
 
 
 async function main(){
-    await mongoose.connect(db_url);
+     mongoose.connect(db_url);
 }
 app.get("/",(req,res)=>{
    
